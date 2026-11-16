@@ -1,0 +1,6 @@
+{
+  "name": "Ghostpix",
+  "description": "Hide secret Unicode and AES-GCM encrypted messages inside ordinary images using 100% browser-based LSB steganography.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
