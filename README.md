@@ -1,4 +1,4 @@
-<h1 align="center"> Ghostpix</h1>
+<h1 align="center">👻 Ghostpix</h1>
 
 <p align="center"><a href="https://ghostpix.netlify.app"><strong>Open Ghostpix Live Demo ↗</strong></a></p>
 
@@ -63,28 +63,28 @@ The current implementation supports:
 ## ◈ Interface preview
 
 <p align="center">
-  <img src="docs/screenshots/ghostpix-overview-desktop.png" alt="Ghostpix overview page on desktop, showing Hide Vault and Reveal Inspector" width="100%" />
+  <img src="ghostpix-overview-desktop.png" alt="Ghostpix overview page on desktop, showing Hide Vault and Reveal Inspector" width="100%" />
 </p>
 <p align="center"><sub>01 · Overview — desktop</sub></p>
 
 <table>
   <tr>
     <td width="50%">
-      <img src="docs/screenshots/ghostpix-how-to-use-desktop.png" alt="Ghostpix step-by-step how-to-use guide on desktop" width="100%" />
+      <img src="ghostpix-how-to-use-desktop.png" alt="Ghostpix step-by-step how-to-use guide on desktop" width="100%" />
       <p align="center"><sub>02 · Step-by-step guide</sub></p>
     </td>
     <td width="50%">
-      <img src="docs/screenshots/ghostpix-hide-vault-result.png" alt="Ghostpix Hide Vault result with before-and-after image comparison and bit-view inspector" width="100%" />
+      <img src="ghostpix-hide-vault-result.png" alt="Ghostpix Hide Vault result with before-and-after image comparison and bit-view inspector" width="100%" />
       <p align="center"><sub>03 · Hide Vault — encoded image result</sub></p>
     </td>
   </tr>
   <tr>
     <td width="50%">
-      <img src="docs/screenshots/ghostpix-hide-result-dark.jpg" alt="Ghostpix dark theme showing the hidden-message result and export controls" width="100%" />
+      <img src="ghostpix-hide-result-dark.jpg" alt="Ghostpix dark theme showing the hidden-message result and export controls" width="100%" />
       <p align="center"><sub>04 · Hide result — dark theme</sub></p>
     </td>
     <td width="50%">
-      <img src="docs/screenshots/ghostpix-overview-mobile.png" alt="Ghostpix overview interface on a mobile screen" width="100%" />
+      <img src="ghostpix-overview-mobile.png" alt="Ghostpix overview interface on a mobile screen" width="100%" />
       <p align="center"><sub>05 · Overview — mobile</sub></p>
     </td>
   </tr>
@@ -95,15 +95,15 @@ The current implementation supports:
 <table>
   <tr>
     <td width="33%">
-      <img src="docs/screenshots/ghostpix-reveal-mobile-light.png" alt="Ghostpix Reveal Inspector on mobile in light theme" width="100%" />
+      <img src="ghostpix-reveal-mobile-light.png" alt="Ghostpix Reveal Inspector on mobile in light theme" width="100%" />
       <p align="center"><sub>Reveal · Light</sub></p>
     </td>
     <td width="33%">
-      <img src="docs/screenshots/ghostpix-reveal-mobile-dark.png" alt="Ghostpix Reveal Inspector on mobile in dark theme" width="100%" />
+      <img src="ghostpix-reveal-mobile-dark.png" alt="Ghostpix Reveal Inspector on mobile in dark theme" width="100%" />
       <p align="center"><sub>Reveal · Dark</sub></p>
     </td>
     <td width="33%">
-      <img src="docs/screenshots/ghostpix-how-it-works-mobile.png" alt="Ghostpix how-it-works section on mobile" width="100%" />
+      <img src="ghostpix-how-it-works-mobile.png" alt="Ghostpix how-it-works section on mobile" width="100%" />
       <p align="center"><sub>How it works · Mobile</sub></p>
     </td>
   </tr>
