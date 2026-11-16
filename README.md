@@ -4,47 +4,44 @@
 
 <p align="center">
 
-  <strong>Hide a secret in plain sight.</strong><br />
+  <strong>Hide a secret in plain sight.</strong><br />
 
-  A browser-based image steganography project for embedding text and QR image payloads inside ordinary pictures.
-
-</p>
-
-<p align="center">
-  <strong>Created by <a href="https://github.com/PraneshUK">PRANESH U K</a></strong>
-</p>
-
-<p align="center">
-
-  <img src="https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=111827" alt="React 19" />
-
-  <img src="https://img.shields.io/badge/TypeScript-7-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
-
-  <img src="https://img.shields.io/badge/Vite-8-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
-
-  <img src="https://img.shields.io/badge/Web_Crypto-API-16A34A?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Web Crypto API" />
+  A browser-based image steganography project for embedding text and QR image payloads inside ordinary pictures.
 
 </p>
 
 <p align="center">
 
-  <a href="#-overview">Overview</a> ·
+  <img src="https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=111827" alt="React 19" />
 
-  <a href="#-features">Features</a> ·
+  <img src="https://img.shields.io/badge/TypeScript-7-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
 
-  <a href="#-how-it-works">How it works</a> ·
+  <img src="https://img.shields.io/badge/Vite-8-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
 
-  <a href="#-security-model">Security</a> ·
+  <img src="https://img.shields.io/badge/Web_Crypto-API-16A34A?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Web Crypto API" />
 
-  <a href="#-get-started">Get started</a> ·
+</p>
 
-  <a href="#-roadmap">Roadmap</a>
+<p align="center">
+
+  <a href="#-overview">Overview</a> ·
+
+  <a href="#-features">Features</a> ·
+
+  <a href="#-how-it-works">How it works</a> ·
+
+  <a href="#-security-model">Security</a> ·
+
+  <a href="#-get-started">Get started</a> ·
+
+  <a href="#-roadmap">Roadmap</a>
 
 </p>
 
 ---
 
 ## ✦ Overview
+
 **Ghostpix** lets you place a private payload inside an ordinary carrier image and later extract it with Ghostpix. It combines least-significant-bit (LSB) image steganography with optional password-based encryption, using browser APIs for image and cryptographic processing.
 
 The current implementation supports:
@@ -64,157 +61,126 @@ The current implementation supports:
 > **Project status:** Experimental / portfolio project. The implementation includes security controls and automated tests, but it has not undergone an independent cryptographic audit or formal penetration test. Do not use it as the sole protection for highly sensitive or safety-critical communications.
 
 ## ◈ Interface preview
+
 The screenshots are arranged by matching aspect ratio. Desktop previews share one row, and mobile previews share another, avoiding oversized empty table cells in GitHub's README renderer.
 
 ### Desktop previews
+
 <p align="center">
-
-  <a href="ghostpix-overview-desktop.png"><img src="ghostpix-overview-desktop.png" alt="Ghostpix overview page on desktop" width="23%" /></a>
-
-  <a href="ghostpix-how-to-use-desktop.png"><img src="ghostpix-how-to-use-desktop.png" alt="Ghostpix step-by-step how-to-use guide on desktop" width="23%" /></a>
-
-  <a href="ghostpix-hide-vault-result.png"><img src="ghostpix-hide-vault-result.png" alt="Ghostpix Hide Vault encoded image result with bit-view inspector" width="23%" /></a>
-
-  <a href="ghostpix-hide-result-dark.jpg"><img src="ghostpix-hide-result-dark.jpg" alt="Ghostpix dark theme showing the hidden-message result and export controls" width="23%" /></a>
-
+  <a href="ghostpix-overview-desktop.png"><img src="ghostpix-overview-desktop.png" alt="Ghostpix overview page on desktop" width="23%" /></a>
+  <a href="ghostpix-how-to-use-desktop.png"><img src="ghostpix-how-to-use-desktop.png" alt="Ghostpix step-by-step how-to-use guide on desktop" width="23%" /></a>
+  <a href="ghostpix-hide-vault-result.png"><img src="ghostpix-hide-vault-result.png" alt="Ghostpix Hide Vault encoded image result with bit-view inspector" width="23%" /></a>
+  <a href="ghostpix-hide-result-dark.jpg"><img src="ghostpix-hide-result-dark.jpg" alt="Ghostpix dark theme showing the hidden-message result and export controls" width="23%" /></a>
 </p>
-
 <p align="center"><sub>Overview · How to use · Hide Vault result · Dark theme</sub></p>
 
 ### Mobile previews
+
 <p align="center">
-
-  <a href="ghostpix-overview-mobile.png"><img src="ghostpix-overview-mobile.png" alt="Ghostpix overview interface on mobile" width="20%" /></a>
-
-  <a href="ghostpix-reveal-mobile-light.png"><img src="ghostpix-reveal-mobile-light.png" alt="Ghostpix Reveal Inspector on mobile in light theme" width="20%" /></a>
-
-  <a href="ghostpix-reveal-mobile-dark.png"><img src="ghostpix-reveal-mobile-dark.png" alt="Ghostpix Reveal Inspector on mobile in dark theme" width="20%" /></a>
-
-  <a href="ghostpix-how-it-works-mobile.png"><img src="ghostpix-how-it-works-mobile.png" alt="Ghostpix how-it-works section on mobile" width="20%" /></a>
-
+  <a href="ghostpix-overview-mobile.png"><img src="ghostpix-overview-mobile.png" alt="Ghostpix overview interface on mobile" width="20%" /></a>
+  <a href="ghostpix-reveal-mobile-light.png"><img src="ghostpix-reveal-mobile-light.png" alt="Ghostpix Reveal Inspector on mobile in light theme" width="20%" /></a>
+  <a href="ghostpix-reveal-mobile-dark.png"><img src="ghostpix-reveal-mobile-dark.png" alt="Ghostpix Reveal Inspector on mobile in dark theme" width="20%" /></a>
+  <a href="ghostpix-how-it-works-mobile.png"><img src="ghostpix-how-it-works-mobile.png" alt="Ghostpix how-it-works section on mobile" width="20%" /></a>
 </p>
-
 <p align="center"><sub>Overview · Reveal light · Reveal dark · How it works</sub></p>
 
 ## ✨ Features
+
 | Area | What it does |
-
 |---|---|
-
 | **Hide Vault** | Select a carrier image, enter a message or QR payload, and embed the payload into image pixels. |
-
 | **Reveal Inspector** | Load a Ghostpix PNG, inspect its header, extract the payload, and decrypt it when password-protected. |
-
 | **Unicode** | Uses UTF-8 payload encoding for multilingual text and emoji. |
-
 | **Encryption** | Password-protected mode uses AES-256-GCM with a 128-bit authentication tag. Encryption is enabled by default and can be switched off. |
-
 | **Image capacity** | Estimates the carrier's payload capacity and blocks payloads that exceed it. |
-
 | **QR payloads** | Generates a QR image from text or accepts an uploaded QR image for embedding. |
-
 | **Pixel inspection** | Includes pixel/bit inspection and before/after comparison components. |
-
 | **Legacy support** | The extractor supports the older GPX1 format as well as GPX2. |
-
 | **Responsive interface** | Designed for desktop and smaller screens, with motion and reduced-motion handling. |
 
 ## ⌁ How it works
+
 ### Hide a message
+
 ```mermaid
 
 flowchart LR
 
-    A[Choose carrier image] --> B[Enter text or QR payload]
+    A[Choose carrier image] --> B[Enter text or QR payload]
 
-    B --> C{Encryption enabled?}
+    B --> C{Encryption enabled?}
 
-    C -->|Yes| D[Derive key with PBKDF2]
+    C -->|Yes| D[Derive key with PBKDF2]
 
-    D --> E[Encrypt with AES-256-GCM]
+    D --> E[Encrypt with AES-256-GCM]
 
-    C -->|No| F[Use UTF-8 payload]
+    C -->|No| F[Use UTF-8 payload]
 
-    E --> G[Build GPX2 header]
+    E --> G[Build GPX2 header]
 
-    F --> G
+    F --> G
 
-    G --> H[Embed header and payload into RGB LSBs]
+    G --> H[Embed header and payload into RGB LSBs]
 
-    H --> I[Export lossless PNG]
+    H --> I[Export lossless PNG]
 
 ```
 
 ### Reveal a message
+
 ```mermaid
 
 flowchart LR
 
-    A[Open encoded PNG] --> B[Read GPX header]
+    A[Open encoded PNG] --> B[Read GPX header]
 
-    B --> C{GPX1 or GPX2?}
+    B --> C{GPX1 or GPX2?}
 
-    C --> D[Extract payload]
+    C --> D[Extract payload]
 
-    D --> E{Encrypted?}
+    D --> E{Encrypted?}
 
-    E -->|Yes| F[Ask for password and authenticate AES-GCM]
+    E -->|Yes| F[Ask for password and authenticate AES-GCM]
 
-    E -->|No| G[Decode UTF-8 or QR payload]
+    E -->|No| G[Decode UTF-8 or QR payload]
 
-    F --> H[Reveal content after authentication]
+    F --> H[Reveal content after authentication]
 
-    G --> I[Display extracted content]
+    G --> I[Display extracted content]
 
-    H --> I
+    H --> I
 
 ```
 
 ## 🛡️ Security model
+
 Ghostpix is designed to keep the image and message-processing workflow in the browser. Its security depends on both cryptography and the way the carrier image is handled after export.
 
 ### Encryption and key derivation
+
 | Control | Current implementation |
-
 |---|---|
-
 | Cipher | AES-256-GCM |
-
 | Authentication tag | 128-bit GCM tag |
-
 | Password KDF | PBKDF2-HMAC-SHA-256 |
-
 | GPX2 KDF work factor | 600,000 iterations by default |
-
 | Legacy GPX1 KDF | 100,000 iterations for legacy encrypted payloads |
-
 | Salt | 16 bytes, generated with `crypto.getRandomValues` |
-
 | Nonce / IV | 12 bytes, generated with `crypto.getRandomValues` |
-
 | Password rule | Minimum 8 characters, confirmation, and strength feedback |
-
 | Metadata binding | GPX2 header fields are supplied as AES-GCM Additional Authenticated Data (AAD) |
-
 AES-GCM authentication means that a wrong password or modified authenticated ciphertext/header metadata should cause decryption to fail rather than return unauthenticated plaintext.
 
 ### GPX2 and backward compatibility
+
 | Property | GPX1 | GPX2 |
-
 |---|---|---|
-
 | Identifier | `GPX1` | `GPX2` |
-
 | Header size | 9 bytes | 47 bytes |
-
 | Header checksum | None | CRC-32 over the first 43 header bytes |
-
 | Payload placement | Sequential | Password-seeded, pseudo-random Feistel mapping when encryption is enabled |
-
 | KDF parameters | Legacy fixed behavior | KDF identifier and iteration count stored in the header |
-
 | Extraction | Supported | Current format |
-
 **Important implementation details and limitations:**
 
 - The GPX2 header is written sequentially at the start of the RGB channel stream. Its `GPX2` marker is therefore recognizable; the header itself is not concealed.
@@ -230,25 +196,19 @@ AES-GCM authentication means that a wrong password or modified authenticated cip
 - Encryption can be turned off. In that mode, the payload is not confidential and should be treated as readable by anyone able to extract it.
 
 ### Image handling and limits
+
 | Input | Limit / behavior |
-
 |---|---|
-
 | Carrier file size | Up to 50 MB |
-
 | Carrier dimensions | Up to 16,384 px per side and 24 MP total |
-
 | Accepted carrier formats | PNG, JPEG, WebP (validated by file signature and decoded image checks) |
-
 | Export format | PNG |
-
 | QR image upload | Up to 10 MB, 4,096 px per side and 4 MP total |
-
 | QR text mode | Up to 2,331 UTF-8 bytes |
-
 **Always share the exported PNG as a file/document.** Social platforms and messaging apps may resize, recompress, or convert images; that can destroy the hidden LSB data. Do not convert the exported PNG to JPEG.
 
 ### Privacy notes
+
 - Image decoding, payload embedding/extraction, and encryption/decryption are implemented with browser-side Canvas and Web Crypto APIs.
 
 - The project has no application backend, account system, or API key requirement in the current source.
@@ -260,32 +220,24 @@ AES-GCM authentication means that a wrong password or modified authenticated cip
 - Browser extensions, compromised devices, screenshots, clipboard managers, and recipients saving a decoded message are outside Ghostpix's protection boundary.
 
 ## ⚙️ Tech stack
+
 | Technology | Role |
-
 |---|---|
-
 | React 19 | UI and component state |
-
 | TypeScript | Application and utility logic |
-
 | Vite | Development server and production bundler |
-
 | Tailwind CSS 4 | Styling system |
-
 | Web Crypto API | AES-GCM and PBKDF2 |
-
 | Canvas 2D API | Pixel access and lossless PNG generation |
-
 | `qrcode` | QR image generation |
-
 | `jsqr` | QR decoding |
-
 | Motion / GSAP | Interface animation |
-
 | `tsx` + Node test runner | Utility test execution |
 
 ## 🚀 Get started
+
 ### Requirements
+
 - Node.js 18 or newer (a current LTS release is recommended).
 
 - npm.
@@ -293,6 +245,7 @@ AES-GCM authentication means that a wrong password or modified authenticated cip
 - A modern browser with Canvas 2D and Web Crypto support.
 
 ### 1. Clone the repository
+
 ```bash
 
 git clone https://github.com/YOUR_USERNAME/ghostpix.git
@@ -304,6 +257,7 @@ cd ghostpix
 Replace `YOUR_USERNAME` with your GitHub username, and adjust `ghostpix` if you chose a different repository name.
 
 ### 2. Install dependencies
+
 ```bash
 
 npm install
@@ -311,6 +265,7 @@ npm install
 ```
 
 ### 3. Start the development server
+
 ```bash
 
 npm run dev
@@ -320,6 +275,7 @@ npm run dev
 Open the local URL printed by Vite (the project script uses port `3000`).
 
 ### 4. Run checks
+
 ```bash
 
 # Run the automated utility tests
@@ -343,6 +299,7 @@ npm run preview
 > `npm run lint` currently runs `tsc --noEmit`; it is a TypeScript check, not an ESLint rule scan.
 
 ## 🌐 Deploy
+
 Ghostpix is a static Vite application and can be hosted on Netlify, Vercel, or another static web host.
 
 Live website: https://ghostpix.netlify.app
@@ -350,18 +307,14 @@ Live website: https://ghostpix.netlify.app
 **Build settings**
 
 | Setting | Value |
-
 |---|---|
-
 | Build command | `npm run build` |
-
 | Publish directory | `dist` |
-
 | Environment variables | None required by the current source |
-
 For production, configure security headers at the hosting provider as HTTP response headers. The current `index.html` contains a meta CSP directive; review and tighten its `unsafe-inline` allowances and external font origins as part of deployment hardening.
 
 ## 🧪 Test coverage in the repository
+
 The current utility test suite includes checks for:
 
 - GPX2 capacity calculations and GPX1 compatibility.
@@ -387,69 +340,41 @@ The current utility test suite includes checks for:
 Run `npm test` locally to execute the suite. Test coverage listed here describes the test cases present in the source; it is not a claim that every browser, device, or deployment environment has been tested.
 
 ## 🗂️ Project structure
+
 ```text
-
 ghostpix/
-
 ├── docs/
-
-│   └── screenshots/
-
-│       ├── ghostpix-overview-desktop.png
-
-│       ├── ghostpix-how-to-use-desktop.png
-
-│       ├── ghostpix-hide-vault-result.png
-
-│       ├── ghostpix-hide-result-dark.jpg
-
-│       ├── ghostpix-overview-mobile.png
-
-│       ├── ghostpix-reveal-mobile-light.png
-
-│       ├── ghostpix-reveal-mobile-dark.png
-
-│       └── ghostpix-how-it-works-mobile.png
-
+│   └── screenshots/
+│       ├── ghostpix-overview-desktop.png
+│       ├── ghostpix-how-to-use-desktop.png
+│       ├── ghostpix-hide-vault-result.png
+│       ├── ghostpix-hide-result-dark.jpg
+│       ├── ghostpix-overview-mobile.png
+│       ├── ghostpix-reveal-mobile-light.png
+│       ├── ghostpix-reveal-mobile-dark.png
+│       └── ghostpix-how-it-works-mobile.png
 ├── src/
-
-│   ├── assets/images/          # Built-in sample carrier images
-
-│   ├── components/             # Hide, reveal, UI and diagnostics components
-
-│   ├── utils/
-
-│   │   ├── canvasHelpers.ts    # Image validation and Canvas operations
-
-│   │   ├── crypto.ts           # AES-GCM and PBKDF2 helpers
-
-│   │   ├── qrStego.ts          # QR payload utilities
-
-│   │   ├── steganography.ts    # GPX1 / GPX2 LSB encoding and extraction
-
-│   │   └── steganography.test.ts
-
-│   ├── App.tsx
-
-│   ├── index.css
-
-│   └── main.tsx
-
+│   ├── assets/images/          # Built-in sample carrier images
+│   ├── components/             # Hide, reveal, UI and diagnostics components
+│   ├── utils/
+│   │   ├── canvasHelpers.ts    # Image validation and Canvas operations
+│   │   ├── crypto.ts           # AES-GCM and PBKDF2 helpers
+│   │   ├── qrStego.ts          # QR payload utilities
+│   │   ├── steganography.ts    # GPX1 / GPX2 LSB encoding and extraction
+│   │   └── steganography.test.ts
+│   ├── App.tsx
+│   ├── index.css
+│   └── main.tsx
 ├── .gitignore
-
 ├── bun.lock
-
 ├── index.html
-
 ├── package.json
-
 ├── tsconfig.json
-
 └── vite.config.ts
-
 ```
 
 ## 🧭 Roadmap
+
 These are ideas for future work, not features promised by the current release.
 
 - [ ] Independent cryptographic review of the GPX2 payload-position permutation.
@@ -467,6 +392,7 @@ These are ideas for future work, not features promised by the current release.
 - [ ] Explore offline-first PWA support.
 
 ## 🤝 Contributing
+
 Contributions, bug reports, and security feedback are welcome. For code changes:
 
 1. Fork the repository.
@@ -482,14 +408,15 @@ Contributions, bug reports, and security feedback are welcome. For code changes:
 Please do not publish details of an unpatched security issue in a public issue. Contact the maintainer privately where possible.
 
 ## 📜 License
+
 No `LICENSE` file is included in the current project source. Add a license before granting others explicit permission to reuse, modify, or redistribute the project.
 
 ---
 
 <p align="center">
 
-  <strong>Ghostpix</strong><br />
+  <strong>Ghostpix</strong><br />
 
-  <sub>Privacy is a design choice. Security is a process.</sub>
+  <sub>Privacy is a design choice. Security is a process.</sub>
 
 </p>
