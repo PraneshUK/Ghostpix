@@ -1,4 +1,4 @@
-<h1 align="center">👻 Ghostpix</h1>
+<h1 align="center"> Ghostpix</h1>
 
 <p align="center"><a href="https://ghostpix.netlify.app"><strong>Open Ghostpix Live Demo ↗</strong></a></p>
 
