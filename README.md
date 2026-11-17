@@ -1,422 +1,283 @@
-<h1 align="center">👻 Ghostpix</h1>
-
-<p align="center"><a href="https://ghostpix.netlify.app"><strong>Open Ghostpix Live Demo ↗</strong></a></p>
-
-<p align="center">
-
-  <strong>Hide a secret in plain sight.</strong><br />
-
-  A browser-based image steganography project for embedding text and QR image payloads inside ordinary pictures.
-
-</p>
-
-<p align="center">
-
-  <img src="https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=111827" alt="React 19" />
-
-  <img src="https://img.shields.io/badge/TypeScript-7-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
-
-  <img src="https://img.shields.io/badge/Vite-8-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
-
-  <img src="https://img.shields.io/badge/Web_Crypto-API-16A34A?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Web Crypto API" />
-
-</p>
-
-<p align="center">
-
-  <a href="#-overview">Overview</a> ·
-
-  <a href="#-features">Features</a> ·
-
-  <a href="#-how-it-works">How it works</a> ·
-
-  <a href="#-security-model">Security</a> ·
-
-  <a href="#-get-started">Get started</a> ·
-
-  <a href="#-roadmap">Roadmap</a>
-
-</p>
-
+<div align="center">
+# Ghost_pix
+ 
+### Hide a secret in plain sight.
+ 
+Hide a Unicode message, optionally locked with a password, inside an ordinary image.
+Send the picture. Your friend opens it in Ghost_pix and reads the message.
+**Everything runs in your browser. Nothing is uploaded.**
+ 
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-7-3178C6?logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss&logoColor=white)
+![Encryption](https://img.shields.io/badge/AES--256--GCM-Web_Crypto-FF5A1F)
+![Backend](https://img.shields.io/badge/backend-none-2ea44f)
+ 
+<img src="docs/screenshots/overview.webp" alt="Ghost_pix home screen" width="860">
+</div>
 ---
-
-## ✦ Overview
-
-**Ghostpix** lets you place a private payload inside an ordinary carrier image and later extract it with Ghostpix. It combines least-significant-bit (LSB) image steganography with optional password-based encryption, using browser APIs for image and cryptographic processing.
-
-The current implementation supports:
-
-- Unicode text, including Tamil and emoji.
-
-- Text converted into a QR image payload.
-
-- An uploaded QR image as the hidden payload.
-
-- Password-protected payloads using AES-256-GCM.
-
-- Lossless PNG export for preserving embedded pixel bits.
-
-- Reading legacy GPX1 images as well as the current GPX2 format.
-
-> **Project status:** Experimental / portfolio project. The implementation includes security controls and automated tests, but it has not undergone an independent cryptographic audit or formal penetration test. Do not use it as the sole protection for highly sensitive or safety-critical communications.
-
-## ◈ Interface preview
-
-The screenshots are arranged by matching aspect ratio. Desktop previews share one row, and mobile previews share another, avoiding oversized empty table cells in GitHub's README renderer.
-
-### Desktop previews
-
-<p align="center">
-  <a href="ghostpix-overview-desktop.png"><img src="ghostpix-overview-desktop.png" alt="Ghostpix overview page on desktop" width="23%" /></a>
-  <a href="ghostpix-how-to-use-desktop.png"><img src="ghostpix-how-to-use-desktop.png" alt="Ghostpix step-by-step how-to-use guide on desktop" width="23%" /></a>
-  <a href="ghostpix-hide-vault-result.png"><img src="ghostpix-hide-vault-result.png" alt="Ghostpix Hide Vault encoded image result with bit-view inspector" width="23%" /></a>
-  <a href="ghostpix-hide-result-dark.jpg"><img src="ghostpix-hide-result-dark.jpg" alt="Ghostpix dark theme showing the hidden-message result and export controls" width="23%" /></a>
-</p>
-<p align="center"><sub>Overview · How to use · Hide Vault result · Dark theme</sub></p>
-
-### Mobile previews
-
-<p align="center">
-  <a href="ghostpix-overview-mobile.png"><img src="ghostpix-overview-mobile.png" alt="Ghostpix overview interface on mobile" width="20%" /></a>
-  <a href="ghostpix-reveal-mobile-light.png"><img src="ghostpix-reveal-mobile-light.png" alt="Ghostpix Reveal Inspector on mobile in light theme" width="20%" /></a>
-  <a href="ghostpix-reveal-mobile-dark.png"><img src="ghostpix-reveal-mobile-dark.png" alt="Ghostpix Reveal Inspector on mobile in dark theme" width="20%" /></a>
-  <a href="ghostpix-how-it-works-mobile.png"><img src="ghostpix-how-it-works-mobile.png" alt="Ghostpix how-it-works section on mobile" width="20%" /></a>
-</p>
-<p align="center"><sub>Overview · Reveal light · Reveal dark · How it works</sub></p>
-
-## ✨ Features
-
-| Area | What it does |
-|---|---|
-| **Hide Vault** | Select a carrier image, enter a message or QR payload, and embed the payload into image pixels. |
-| **Reveal Inspector** | Load a Ghostpix PNG, inspect its header, extract the payload, and decrypt it when password-protected. |
-| **Unicode** | Uses UTF-8 payload encoding for multilingual text and emoji. |
-| **Encryption** | Password-protected mode uses AES-256-GCM with a 128-bit authentication tag. Encryption is enabled by default and can be switched off. |
-| **Image capacity** | Estimates the carrier's payload capacity and blocks payloads that exceed it. |
-| **QR payloads** | Generates a QR image from text or accepts an uploaded QR image for embedding. |
-| **Pixel inspection** | Includes pixel/bit inspection and before/after comparison components. |
-| **Legacy support** | The extractor supports the older GPX1 format as well as GPX2. |
-| **Responsive interface** | Designed for desktop and smaller screens, with motion and reduced-motion handling. |
-
-## ⌁ How it works
-
-### Hide a message
-
+ 
+## Contents
+ 
+- [What it does](#what-it-does)
+- [Screenshots](#screenshots)
+- [Features](#features)
+- [How it works](#how-it-works)
+- [Quick start](#quick-start)
+- [Using the app](#using-the-app)
+- [Project structure](#project-structure)
+- [Tech stack](#tech-stack)
+- [Limitations (please read)](#limitations-please-read)
+- [Roadmap](#roadmap)
+- [Author](#author)
+---
+ 
+## What it does
+ 
+Ghost_pix is a **steganography** web app. It changes the least significant bit of a few colour values in a picture, so that the picture still looks identical to the eye but now carries a hidden message.
+ 
+| You want to… | Ghost_pix… |
+| --- | --- |
+| Send a private note inside a normal-looking photo | Hides it in the image and gives you a lossless PNG |
+| Keep the note unreadable even if someone finds it | Locks it with AES-256-GCM and your password before hiding |
+| Read a hidden note you received | Detects it, asks for the password if needed, and shows the text |
+| Understand what changed in the picture | Shows a before/after slider and a pixel-level bit inspector |
+ 
+---
+ 
+## Screenshots
+ 
+<table>
+  <tr>
+    <td width="50%"><img src="docs/screenshots/hide-vault.webp" alt="Hide Vault: cover image, message and password"><br><sub><b>Hide Vault.</b> Pick a cover image, type the message, set an optional password.</sub></td>
+    <td width="50%"><img src="docs/screenshots/hide-result.webp" alt="Result: before and after slider with embedding stats"><br><sub><b>Result.</b> Before/after slider with bits embedded, LSBs flipped and pixels modified.</sub></td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="docs/screenshots/bit-inspector.webp" alt="Bit view inspector showing an 8 by 8 pixel block"><br><sub><b>Bit inspector.</b> An 8×8 pixel block with the exact binary change for every channel.</sub></td>
+    <td width="50%"><img src="docs/screenshots/reveal.webp" alt="Reveal Inspector decrypting a hidden message"><br><sub><b>Reveal.</b> GPX1 is detected, the password unlocks the message, one click copies it.</sub></td>
+  </tr>
+</table>
+---
+ 
+## Features
+ 
+**Hiding and revealing**
+- Hide any UTF-8 text, including emoji and non-Latin scripts such as Tamil
+- Optional **AES-256-GCM** encryption with a password (PBKDF2-SHA256, random salt and IV per message)
+- **QR mode**: the message is rendered as a QR code PNG and that PNG is hidden in the carrier (up to 2,331 UTF-8 bytes)
+- Output is always a **lossless PNG**, so every hidden bit survives
+- Reveal side pre-scans the upload and tells you whether a GPX1 message exists, and whether it needs a password
+**Understanding what happened**
+- Before/after comparison slider with an adjustable split
+- **Bit view inspector**: pick any pixel in an 8×8 block and see its R, G, B values and the changed bit in binary
+- Live **capacity meter** so you know how much text fits before you press the button
+- **Security audit panel** on the reveal page: header signature, format integrity, Shannon entropy and payload capacity
+**Convenience**
+- Drag and drop, file picker, or paste an image with `Ctrl+V`
+- Two built-in sample images (Aurora Fjord and Glass Prisms) to try it without your own photo
+- Accepts PNG, JPEG and WebP up to 24 megapixels, with a notice above 8 megapixels
+- Warns you that chat apps recompress images and will destroy the message (send as **File** or **Document**)
+- Light and dark themes (follows your system setting, with a toggle)
+- Respects the reduced-motion setting
+**Privacy**
+- No server, no account, no upload. Images and messages are processed with the browser's Canvas and Web Crypto APIs
+---
+ 
+## How it works
+ 
 ```mermaid
-
 flowchart LR
-
-    A[Choose carrier image] --> B[Enter text or QR payload]
-
-    B --> C{Encryption enabled?}
-
-    C -->|Yes| D[Derive key with PBKDF2]
-
-    D --> E[Encrypt with AES-256-GCM]
-
-    C -->|No| F[Use UTF-8 payload]
-
-    E --> G[Build GPX2 header]
-
-    F --> G
-
-    G --> H[Embed header and payload into RGB LSBs]
-
-    H --> I[Export lossless PNG]
-
+    M["Message text"] --> U["UTF-8 bytes"]
+    U -->|"optional password"| E["AES-256-GCM<br/>key from PBKDF2"]
+    U --> F
+    E --> F["GPX1 frame<br/>magic, flag, length, payload"]
+    C["Cover image"] --> A["Flatten alpha"]
+    A --> W["Write frame bits into<br/>R, G, B least significant bits"]
+    F --> W
+    W --> P["Lossless PNG"]
 ```
-
-### Reveal a message
-
+ 
 ```mermaid
-
 flowchart LR
-
-    A[Open encoded PNG] --> B[Read GPX header]
-
-    B --> C{GPX1 or GPX2?}
-
-    C --> D[Extract payload]
-
-    D --> E{Encrypted?}
-
-    E -->|Yes| F[Ask for password and authenticate AES-GCM]
-
-    E -->|No| G[Decode UTF-8 or QR payload]
-
-    F --> H[Reveal content after authentication]
-
-    G --> I[Display extracted content]
-
-    H --> I
-
+    P["Received PNG"] --> R["Read the first 9 bytes<br/>from the R, G, B LSBs"]
+    R --> V{"Starts with GPX1?"}
+    V -->|"no"| N["No hidden message"]
+    V -->|"yes"| L["Read payload using<br/>the length field"]
+    L --> Q{"Encrypted flag?"}
+    Q -->|"no"| T["Show text"]
+    Q -->|"yes"| D["Password, PBKDF2,<br/>AES-GCM decrypt"]
+    D --> T
 ```
-
-## 🛡️ Security model
-
-Ghostpix is designed to keep the image and message-processing workflow in the browser. Its security depends on both cryptography and the way the carrier image is handled after export.
-
-### Encryption and key derivation
-
-| Control | Current implementation |
-|---|---|
-| Cipher | AES-256-GCM |
-| Authentication tag | 128-bit GCM tag |
-| Password KDF | PBKDF2-HMAC-SHA-256 |
-| GPX2 KDF work factor | 600,000 iterations by default |
-| Legacy GPX1 KDF | 100,000 iterations for legacy encrypted payloads |
-| Salt | 16 bytes, generated with `crypto.getRandomValues` |
-| Nonce / IV | 12 bytes, generated with `crypto.getRandomValues` |
-| Password rule | Minimum 8 characters, confirmation, and strength feedback |
-| Metadata binding | GPX2 header fields are supplied as AES-GCM Additional Authenticated Data (AAD) |
-AES-GCM authentication means that a wrong password or modified authenticated ciphertext/header metadata should cause decryption to fail rather than return unauthenticated plaintext.
-
-### GPX2 and backward compatibility
-
-| Property | GPX1 | GPX2 |
-|---|---|---|
-| Identifier | `GPX1` | `GPX2` |
-| Header size | 9 bytes | 47 bytes |
-| Header checksum | None | CRC-32 over the first 43 header bytes |
-| Payload placement | Sequential | Password-seeded, pseudo-random Feistel mapping when encryption is enabled |
-| KDF parameters | Legacy fixed behavior | KDF identifier and iteration count stored in the header |
-| Extraction | Supported | Current format |
-**Important implementation details and limitations:**
-
-- The GPX2 header is written sequentially at the start of the RGB channel stream. Its `GPX2` marker is therefore recognizable; the header itself is not concealed.
-
-- The current payload-position mapping uses a custom four-round, cycle-walking Feistel construction. It has not been independently reviewed as a cryptographic pseudorandom permutation. Treat it as an obfuscation/distribution mechanism, not as a substitute for encryption.
-
-- The separate steganographic seed is currently derived with a default PBKDF2 work factor of 50,000 iterations, lower than the 600,000 iterations used for the AES encryption key. This mapping should receive independent cryptographic review before being relied on as a security boundary.
-
-- LSB steganography is not inherently undetectable. Statistical steganalysis may identify altered pixel distributions even when the payload is encrypted.
-
-- CRC-32 helps identify accidental/corrupt header changes; it is not a cryptographic authentication mechanism. AES-GCM provides the cryptographic authentication for encrypted payloads.
-
-- Encryption can be turned off. In that mode, the payload is not confidential and should be treated as readable by anyone able to extract it.
-
-### Image handling and limits
-
-| Input | Limit / behavior |
-|---|---|
-| Carrier file size | Up to 50 MB |
-| Carrier dimensions | Up to 16,384 px per side and 24 MP total |
-| Accepted carrier formats | PNG, JPEG, WebP (validated by file signature and decoded image checks) |
-| Export format | PNG |
-| QR image upload | Up to 10 MB, 4,096 px per side and 4 MP total |
-| QR text mode | Up to 2,331 UTF-8 bytes |
-**Always share the exported PNG as a file/document.** Social platforms and messaging apps may resize, recompress, or convert images; that can destroy the hidden LSB data. Do not convert the exported PNG to JPEG.
-
-### Privacy notes
-
-- Image decoding, payload embedding/extraction, and encryption/decryption are implemented with browser-side Canvas and Web Crypto APIs.
-
-- The project has no application backend, account system, or API key requirement in the current source.
-
-- The app stores the visual theme preference in `localStorage`; secret messages and passwords are handled in transient application state and are not intentionally persisted there.
-
-- Google Fonts are loaded from Google Fonts, so the page makes external font requests. The app is therefore not completely offline by default.
-
-- Browser extensions, compromised devices, screenshots, clipboard managers, and recipients saving a decoded message are outside Ghostpix's protection boundary.
-
-## ⚙️ Tech stack
-
-| Technology | Role |
-|---|---|
-| React 19 | UI and component state |
-| TypeScript | Application and utility logic |
-| Vite | Development server and production bundler |
-| Tailwind CSS 4 | Styling system |
-| Web Crypto API | AES-GCM and PBKDF2 |
-| Canvas 2D API | Pixel access and lossless PNG generation |
-| `qrcode` | QR image generation |
-| `jsqr` | QR decoding |
-| Motion / GSAP | Interface animation |
-| `tsx` + Node test runner | Utility test execution |
-
-## 🚀 Get started
-
-### Requirements
-
-- Node.js 18 or newer (a current LTS release is recommended).
-
-- npm.
-
-- A modern browser with Canvas 2D and Web Crypto support.
-
-### 1. Clone the repository
-
-```bash
-
-git clone https://github.com/YOUR_USERNAME/ghostpix.git
-
-cd ghostpix
-
+ 
+### The idea in one pixel
+ 
+Every pixel has red, green and blue values from 0 to 255. Changing the **last bit** of a value moves it by at most 1/255 (0.39 percent), which nobody can see. Ghost_pix writes the message into those last bits, three bits per pixel.
+ 
+The first byte of every message is the letter `G` (`0x47`, binary `01000111`). Its first three bits `0`, `1`, `0` are written into the first pixel. This is a real capture from the bit inspector:
+ 
+| Channel | Before | After | Last bit |
+| --- | --- | --- | --- |
+| R | `3` (`00000011`) | `2` (`00000010`) | `1` → `0` |
+| G | `12` (`00001100`) | `13` (`00001101`) | `0` → `1` |
+| B | `21` (`00010101`) | `20` (`00010100`) | `1` → `0` |
+ 
+### The GPX1 frame
+ 
+Everything hidden in an image is wrapped in this frame, written most significant bit first, starting at pixel 0:
+ 
+| Offset | Size | Field | Meaning |
+| --- | --- | --- | --- |
+| 0 | 4 bytes | Magic | `GPX1` (`47 50 58 31`) |
+| 4 | 1 byte | Flags | `0x01` encrypted, `0x02` payload is a QR PNG, `0x03` both |
+| 5 | 4 bytes | Length | Payload length, unsigned 32-bit, big-endian |
+| 9 | length bytes | Payload | UTF-8 text, an encrypted blob, or a QR PNG |
+ 
+When encrypted, the payload is `[16-byte salt | 12-byte IV | ciphertext + 16-byte GCM tag]`, which adds 44 bytes of overhead.
+ 
+### Capacity
+ 
 ```
-
-Replace `YOUR_USERNAME` with your GitHub username, and adjust `ghostpix` if you chose a different repository name.
-
-### 2. Install dependencies
-
-```bash
-
-npm install
-
+capacity (bytes) = floor(width × height × 3 / 8) − 9
 ```
-
-### 3. Start the development server
-
+ 
+A 1200 × 896 image holds 403,191 bytes. Alpha is not used, and transparent pixels are flattened before embedding.
+ 
+---
+ 
+## Quick start
+ 
+**You need:** Node.js 20.19 or newer (or 22.12 or newer), and npm.
+ 
+Clone this repository, then from the project root:
+ 
 ```bash
-
+npm install --legacy-peer-deps
 npm run dev
-
 ```
-
-Open the local URL printed by Vite (the project script uses port `3000`).
-
-### 4. Run checks
-
-```bash
-
-# Run the automated utility tests
-
-npm test
-
-# Run TypeScript type checking (the script is named lint)
-
-npm run lint
-
-# Create a production build
-
-npm run build
-
-# Preview the production build locally
-
-npm run preview
-
-```
-
-> `npm run lint` currently runs `tsc --noEmit`; it is a TypeScript check, not an ESLint rule scan.
-
-## 🌐 Deploy
-
-Ghostpix is a static Vite application and can be hosted on Netlify, Vercel, or another static web host.
-
-Live website: https://ghostpix.netlify.app
-
-**Build settings**
-
-| Setting | Value |
-|---|---|
-| Build command | `npm run build` |
-| Publish directory | `dist` |
-| Environment variables | None required by the current source |
-For production, configure security headers at the hosting provider as HTTP response headers. The current `index.html` contains a meta CSP directive; review and tighten its `unsafe-inline` allowances and external font origins as part of deployment hardening.
-
-## 🧪 Test coverage in the repository
-
-The current utility test suite includes checks for:
-
-- GPX2 capacity calculations and GPX1 compatibility.
-
-- Unicode (Tamil and emoji) encode/extract round trips.
-
-- AES-GCM encryption, wrong-password rejection, ciphertext tampering, and AAD tampering.
-
-- Feistel permutation bijection properties.
-
-- Password strength rules.
-
-- Image format, dimension, size, and PNG structure validation.
-
-- Capacity overflow and empty payload handling.
-
-- QR generation and QR size limits.
-
-- Pixel inspection and PNG pixel round trips.
-
-- PBKDF2 performance benchmarks.
-
-Run `npm test` locally to execute the suite. Test coverage listed here describes the test cases present in the source; it is not a claim that every browser, device, or deployment environment has been tested.
-
-## 🗂️ Project structure
-
-```text
-ghostpix/
-├── docs/
-│   └── screenshots/
-│       ├── ghostpix-overview-desktop.png
-│       ├── ghostpix-how-to-use-desktop.png
-│       ├── ghostpix-hide-vault-result.png
-│       ├── ghostpix-hide-result-dark.jpg
-│       ├── ghostpix-overview-mobile.png
-│       ├── ghostpix-reveal-mobile-light.png
-│       ├── ghostpix-reveal-mobile-dark.png
-│       └── ghostpix-how-it-works-mobile.png
-├── src/
-│   ├── assets/images/          # Built-in sample carrier images
-│   ├── components/             # Hide, reveal, UI and diagnostics components
-│   ├── utils/
-│   │   ├── canvasHelpers.ts    # Image validation and Canvas operations
-│   │   ├── crypto.ts           # AES-GCM and PBKDF2 helpers
-│   │   ├── qrStego.ts          # QR payload utilities
-│   │   ├── steganography.ts    # GPX1 / GPX2 LSB encoding and extraction
-│   │   └── steganography.test.ts
-│   ├── App.tsx
-│   ├── index.css
-│   └── main.tsx
-├── .gitignore
-├── bun.lock
-├── index.html
-├── package.json
-├── tsconfig.json
-└── vite.config.ts
-```
-
-## 🧭 Roadmap
-
-These are ideas for future work, not features promised by the current release.
-
-- [ ] Independent cryptographic review of the GPX2 payload-position permutation.
-
-- [ ] Evaluate stronger memory-hard password derivation for supported browsers.
-
-- [ ] Reduce the recognizable GPX2 header footprint in a future format revision.
-
-- [ ] Add end-to-end browser tests across desktop and mobile browsers.
-
-- [ ] Review and tighten production CSP and HTTP security headers.
-
-- [ ] Add reproducible steganalysis evaluation and publish measured results.
-
-- [ ] Explore offline-first PWA support.
-
-## 🤝 Contributing
-
-Contributions, bug reports, and security feedback are welcome. For code changes:
-
-1. Fork the repository.
-
-2. Create a focused branch.
-
-3. Include or update tests for behavior changes.
-
-4. Run `npm test`, `npm run lint`, and `npm run build`.
-
-5. Open a pull request with a clear summary and test results.
-
-Please do not publish details of an unpatched security issue in a public issue. Contact the maintainer privately where possible.
-
-## 📜 License
-
-No `LICENSE` file is included in the current project source. Add a license before granting others explicit permission to reuse, modify, or redistribute the project.
-
+ 
+Open **http://localhost:3000**.
+ 
+> `--legacy-peer-deps` is currently needed because of a peer-dependency conflict in the dependency tree. See [Roadmap](#roadmap).
+ 
+| Command | What it does |
+| --- | --- |
+| `npm run dev` | Start the dev server on port 3000 |
+| `npm run build` | Create a production build in `dist/` |
+| `npm run preview` | Serve the production build locally |
+| `npm run lint` | Type-check with `tsc --noEmit` |
+| `npx tsx --test src/utils/steganography.test.ts` | Run the 12 unit tests |
+ 
+The app uses hash routes, so any static host works with no server rules:
+ 
+| Route | Page |
+| --- | --- |
+| `#/` | Home |
+| `#/hide-vault` | Hide a message |
+| `#/reveal-inspector` | Reveal a message |
+ 
 ---
-
-<p align="center">
-
-  <strong>Ghostpix</strong><br />
-
-  <sub>Privacy is a design choice. Security is a process.</sub>
-
-</p>
+ 
+## Using the app
+ 
+### Hide a message
+ 
+1. Open **Hide Vault**.
+2. Drop, paste or choose a cover image, or pick one of the samples.
+3. Type your message. The capacity meter shows how much room is left.
+4. Optional: set a password to encrypt the message, or use QR mode.
+5. Press **Hide Message**.
+6. Check the before/after slider and the bit inspector, then press **Download PNG**.
+7. Send the PNG as a **file or document**. Photo mode in WhatsApp, Instagram and Telegram recompresses it and destroys the message.
+ 
+### Reveal a message
+ 
+1. Open **Reveal Inspector** (or press **Verify in Reveal** after hiding).
+2. Drop the PNG you received.
+3. The banner shows whether a GPX1 message was found and whether it is locked.
+4. Enter the password if the sender set one.
+5. Press **Reveal Message**, then **Copy** if you want the text.
+---
+ 
+## Project structure
+ 
+```
+.
+├── index.html                  Page shell, fonts, social metadata
+├── metadata.json               App name and description
+├── vite.config.ts              Vite + React + Tailwind plugins
+├── public/
+└── src/
+    ├── main.tsx                Entry point
+    ├── App.tsx                 Hash router, page layout, shared state
+    ├── index.css               Tailwind 4 theme and custom styles
+    ├── assets/images/          Two sample cover images
+    ├── components/
+    │   ├── HideWorkspace.tsx       Hide page: input, options, result
+    │   ├── RevealWorkspace.tsx     Reveal page: pre-scan, password, output
+    │   ├── DropZone.tsx            Drag/drop, picker, paste, samples
+    │   ├── BeforeAfterSlider.tsx   Comparison slider
+    │   ├── BitViewInspector.tsx    8×8 LSB grid with binary diff
+    │   ├── CapacityMeter.tsx       Remaining-space indicator
+    │   ├── SecurityAuditPanel.tsx  Header, format and entropy readout
+    │   ├── HowItWorks.tsx          Three-step explainer
+    │   ├── StepByStepGuide.tsx     Usage guide
+    │   └── TopBar, ScrollScaleRail, LiquidGlassPanel,
+    │       AuroraBackground, ScrambleRevealText, SuccessBurst   UI polish
+    └── utils/
+        ├── steganography.ts        GPX1 frame, embed, extract, capacity
+        ├── crypto.ts               AES-256-GCM + PBKDF2 (Web Crypto)
+        ├── qrStego.ts              Message → QR PNG, and QR decode
+        ├── canvasHelpers.ts        Image loading, size caps, PNG export
+        └── steganography.test.ts   Unit tests (node:test)
+```
+ 
+---
+ 
+## Tech stack
+ 
+| Area | Tools |
+| --- | --- |
+| UI | React 19, TypeScript 7 |
+| Build | Vite 8 |
+| Styling | Tailwind CSS 4, Chakra Petch, JetBrains Mono, Plus Jakarta Sans |
+| Motion | motion, GSAP |
+| Icons | lucide-react |
+| QR | `qrcode` (encode), `jsQR` (decode) |
+| Crypto | Web Crypto API (AES-GCM, PBKDF2) |
+| Tests | Node's built-in test runner, run through `tsx` |
+ 
+---
+ 
+## Limitations (please read)
+ 
+Ghost_pix is a learning and demo project. It has not had an independent security review, so do not rely on it for anything where a leak would cause serious harm.
+ 
+- **It does not survive recompression.** Resizing, screenshots, JPEG conversion, and chat apps in photo mode all destroy the message. Always send the PNG as a file.
+- **Encryption hides the content, not the fact that a message exists.** The `GPX1` signature is stored unencrypted, so anyone who knows the format can see that the image carries a Ghost_pix message.
+- **LSB hiding can be detected statistically.** Messages are written sequentially from the first pixel. Filling a large share of the image's capacity makes it easier for steganalysis tools to flag. Short messages in large images are the safest.
+- **Password strength matters.** Keys come from PBKDF2-SHA256 with 100,000 iterations, which is below the 600,000 that the [OWASP Password Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html) recommends for that algorithm. Use a long passphrase.
+- **Fonts load from Google Fonts.** Your images and messages never leave the device, but the page itself requests fonts from Google when it opens.
+- **Large images use a lot of memory.** Images above 24 megapixels are rejected.
+---
+ 
+## Roadmap
+ 
+- [ ] Remove unused dependencies (`express`, `dotenv`, `@google/genai`, `autoprefixer`, `esbuild`) and drop the need for `--legacy-peer-deps`
+- [ ] Add an `npm test` script and run the tests in CI
+- [ ] Raise the PBKDF2 iteration count and store a format version so old images still open
+- [ ] Spread the message across the image with a password-derived pixel order instead of writing sequentially
+- [ ] Self-host the fonts so the page makes no third-party requests
+- [ ] Add a licence file
+---
+ 
+## Author
+ 
+Built by **Pranesh U K**, final-year Computer Science Engineering student, UI/UX and frontend.
+ 
+---
+ 
+<div align="center">
+<sub>Ghost_pix · client-side steganography · all canvas and Web Crypto operations stay on your device</sub>
+</div>
+ 
