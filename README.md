@@ -7,6 +7,9 @@ Hide a Unicode message, optionally locked with a password, inside an ordinary im
 Send the picture. Your friend opens it in Ghost_pix and reads the message.
 **Everything runs in your browser. Nothing is uploaded.**
  
+### [🚀 Try the live demo → ghostpix.netlify.app](https://ghostpix.netlify.app/)
+ 
+[![Live demo](https://img.shields.io/badge/Live_demo-ghostpix.netlify.app-00C7B7?logo=netlify&logoColor=white)](https://ghostpix.netlify.app/)
 ![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-7-3178C6?logo=typescript&logoColor=white)
@@ -20,6 +23,7 @@ Send the picture. Your friend opens it in Ghost_pix and reads the message.
  
 ## Contents
  
+- [Live demo](#live-demo)
 - [What it does](#what-it-does)
 - [Screenshots](#screenshots)
 - [Features](#features)
@@ -31,6 +35,20 @@ Send the picture. Your friend opens it in Ghost_pix and reads the message.
 - [Limitations (please read)](#limitations-please-read)
 - [Roadmap](#roadmap)
 - [Author](#author)
+---
+ 
+## Live demo
+ 
+Ghost_pix is deployed on Netlify: **https://ghostpix.netlify.app/**
+ 
+| Page | Direct link |
+| --- | --- |
+| Home | [ghostpix.netlify.app](https://ghostpix.netlify.app/) |
+| Hide a message | [ghostpix.netlify.app/#/hide-vault](https://ghostpix.netlify.app/#/hide-vault) |
+| Reveal a message | [ghostpix.netlify.app/#/reveal-inspector](https://ghostpix.netlify.app/#/reveal-inspector) |
+ 
+To try it quickly: open **Hide Vault**, pick one of the sample images, type a message, press **Hide Message**, download the PNG, then drop that PNG into **Reveal Inspector**.
+ 
 ---
  
 ## What it does
@@ -147,6 +165,8 @@ A 1200 × 896 image holds 403,191 bytes. Alpha is not used, and transparent pixe
  
 ## Quick start
  
+Just want to try it? Use the [live demo](https://ghostpix.netlify.app/). To run it on your own machine:
+ 
 **You need:** Node.js 20.19 or newer (or 22.12 or newer), and npm.
  
 Clone this repository, then from the project root:
@@ -189,7 +209,6 @@ The app uses hash routes, so any static host works with no server rules:
 5. Press **Hide Message**.
 6. Check the before/after slider and the bit inspector, then press **Download PNG**.
 7. Send the PNG as a **file or document**. Photo mode in WhatsApp, Instagram and Telegram recompresses it and destroys the message.
- 
 ### Reveal a message
  
 1. Open **Reveal Inspector** (or press **Verify in Reveal** after hiding).
@@ -274,6 +293,10 @@ Ghost_pix is a learning and demo project. It has not had an independent security
 ## Author
  
 Built by **Pranesh U K**, final-year Computer Science Engineering student, UI/UX and frontend.
+ 
+[![Portfolio](https://img.shields.io/badge/Portfolio-pranesuk--portfolio.netlify.app-00C7B7?logo=netlify&logoColor=white)](https://pranesuk-portfolio.netlify.app)
+[![GitHub](https://img.shields.io/badge/GitHub-PraneshUK-181717?logo=github&logoColor=white)](https://github.com/PraneshUK)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-PRANESHUK-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/PRANESHUK)
  
 ---
  
