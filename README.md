@@ -68,9 +68,8 @@ The screenshots are arranged by matching aspect ratio. Desktop previews share on
 
 <p align="center">
   <a href="ghostpix-overview-desktop.png"><img src="ghostpix-overview-desktop.png" alt="Ghostpix overview page on desktop" width="23%" /></a>
-  <a href="ghostpix-how-to-use-desktop.png"><img src="ghostpix-how-to-use-desktop.png" alt="Ghostpix step-by-step how-to-use guide on desktop" width="23%" /></a>
-  <a href="ghostpix-hide-vault-result.png"><img src="ghostpix-hide-vault-result.png" alt="Ghostpix Hide Vault encoded image result with bit-view inspector" width="23%" /></a>
-  <a href="ghostpix-hide-result-dark.jpg"><img src="ghostpix-hide-result-dark.jpg" alt="Ghostpix dark theme showing the hidden-message result and export controls" width="23%" /></a>
+
+ 
 </p>
 <p align="center"><sub>Overview · How to use · Hide Vault result · Dark theme</sub></p>
 
@@ -80,8 +79,7 @@ The screenshots are arranged by matching aspect ratio. Desktop previews share on
   <a href="ghostpix-overview-mobile.png"><img src="ghostpix-overview-mobile.png" alt="Ghostpix overview interface on mobile" width="20%" /></a>
   <a href="ghostpix-reveal-mobile-light.png"><img src="ghostpix-reveal-mobile-light.png" alt="Ghostpix Reveal Inspector on mobile in light theme" width="20%" /></a>
   <a href="ghostpix-reveal-mobile-dark.png"><img src="ghostpix-reveal-mobile-dark.png" alt="Ghostpix Reveal Inspector on mobile in dark theme" width="20%" /></a>
-  <a href="ghostpix-how-it-works-mobile.png"><img src="ghostpix-how-it-works-mobile.png" alt="Ghostpix how-it-works section on mobile" width="20%" /></a>
-</p>
+  
 <p align="center"><sub>Overview · Reveal light · Reveal dark · How it works</sub></p>
 
 ## ✨ Features
